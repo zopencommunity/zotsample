@@ -1,6 +1,6 @@
 #!/bin/sh
 #set -x
-prod=$(cat installdir)
+prod=$(cat install_location)
 if ! [ -d "${prod}" ]; then
 	echo "Installation dir ${prod} from configure does not exist"
 	if ! mkdir -p "${prod}" ; then

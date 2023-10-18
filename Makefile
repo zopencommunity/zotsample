@@ -2,19 +2,22 @@
 # Simple compile and link of C and C++ code.
 # Need to change the linker to CCC (C++) from CC
 #
-CCC ?= clang++
-CC ?= clang
+CCC = clang++
+CC = clang
 LD := $(CCC)
+LOGPFX := $(shell date +%FT%T%Z)
 
-all: zotsample
+.PHONY: clean check install
+
+all: src/zotsample
 clean:
-	rm -f bin/*.o bin/zotsample
+	rm -f src/*.o src/zotsample
 
 check:
-	./check.sh
+	./check >log/check_$(LOGPFX).log
 
-install:
-	./install.sh
+install: 
+	./install >log/install_$(LOGPFX).log
 
-zotsample: src/main.o src/fn.o
-	$(LD) $(LDFLAGS) -o$@ $^ 
+src/zotsample: src/main.o src/fn.o
+	$(LD) $(LDFLAGS) -o$@ $^ >log/build_$(LOGPFX).log
