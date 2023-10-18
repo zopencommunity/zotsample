@@ -20,4 +20,4 @@ install:
 	./install >log/install_$(LOGPFX).log
 
 src/zotsample: src/main.o src/fn.o
-	$(LD) $(LDFLAGS) -o$@ $^ >log/build_$(LOGPFX).log
+	$(LD) -o$@ $^ >log/build_$(LOGPFX).log
