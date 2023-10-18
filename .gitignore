@@ -1,3 +1,4 @@
 *.o
-installdir
+install_location
+log/
 zotsample
