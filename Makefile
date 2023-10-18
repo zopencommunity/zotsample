@@ -2,6 +2,7 @@
 # Simple compile and link of C and C++ code.
 # Need to change the linker to CCC (C++) from CC
 #
+
 CCC = clang++
 CC = clang
 LD := $(CCC)
