@@ -14,10 +14,10 @@ clean:
 	rm -f src/*.o src/zotsample
 
 check:
-	./check >log/check_$(LOGPFX).log
+	./check | tee log/check_$(LOGPFX).log
 
 install: 
-	./install >log/install_$(LOGPFX).log
+	./install | tee log/install_$(LOGPFX).log
 
 src/zotsample: src/main.o src/fn.o
-	$(LD) -o$@ $^ >log/build_$(LOGPFX).log
+	$(LD) -o$@ $^ | tee log/build_$(LOGPFX).log
