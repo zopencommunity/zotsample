@@ -1,6 +1,7 @@
 #
 # Simple compile and link of C and C++ code.
 # Need to change the linker to CCC (C++) from CC
+# This is the zotsample-1.2 branch
 #
 CCC = clang++
 CC = clang
